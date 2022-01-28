@@ -1,24 +1,67 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| nickname  | string | null: false|
+| email              | string | null: false |
+| encrypted_password | string | null: false |
+| last_name              | string | null: false |
+| first_name              | string | null: false |
+| last_name_kana              | string | null: false |
+| first_name_kana              | string | null: false |
+| birthday              | integer | null: false |
 
-Things you may want to cover:
+### Association
+- has_many :items
+- has_many :orders
 
-* Ruby version
 
-* System dependencies
+## itemsテーブル
 
-* Configuration
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| name  | string | null: false|
+| text  | string | null: false|
+| category  | string | null: false |
+| state  | string | null: false|
+| delivery_charge  | string | null: false|
+| delivery_region  | string | null: false|
+| price| integer | null: false |
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- has_one :order
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
+## ordersテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item  | references | null: false, foreign_key: true |
+| address  | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :item
+- belongs_to :user
+- has_one :address
+
+
+## addressesテーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| order   | references | null: false, foreign_key: true |
+| post_code  | string | null: false|
+| prefecture  | string | null: false|
+| city  | string | null: false|
+| block_number  | string | null: false|
+| house_name  | string | |
+| phone_number  | integer | null: false|
+
+### Association
+- belongs_to :order
