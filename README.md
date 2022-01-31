@@ -23,10 +23,11 @@
 | user   | references | null: false, foreign_key: true |
 | name  | string | null: false|
 | info  | text | null: false|
-| category  | string | null: false |
-| state  | string | null: false|
-| delivery_charge  | string | null: false|
-| delivery_region  | string | null: false|
+| category_id  | integer | null: false |
+| state_id  | integer | null: false|
+| delivery_charge_id  | integer | null: false|
+| delivery_region_id  | integer | null: false|
+| delivery_date_id  | integer | null: false|
 | price| integer | null: false |
 
 
