@@ -26,7 +26,7 @@
 | category_id  | integer | null: false |
 | state_id  | integer | null: false|
 | delivery_charge_id  | integer | null: false|
-| delivery_region_id  | integer | null: false|
+| prefecture_id  | integer | null: false|
 | delivery_date_id  | integer | null: false|
 | price| integer | null: false |
 
@@ -57,7 +57,7 @@
 | ------ | ---------- | ------------------------------ |
 | order   | references | null: false, foreign_key: true |
 | post_code  | string | null: false|
-| prefecture  | string | null: false|
+| prefecture_id  | integer | null: false|
 | city  | string | null: false|
 | block_number  | string | null: false|
 | house_name  | string | |
