@@ -60,7 +60,7 @@
 | city  | string | null: false|
 | block_number  | string | null: false|
 | house_name  | string | |
-| phone_number  | integer | null: false|
+| phone_number  | string | null: false|
 
 ### Association
 - belongs_to :order
