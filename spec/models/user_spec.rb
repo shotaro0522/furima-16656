@@ -6,7 +6,6 @@ RSpec.describe User, type: :model do
   end
 
   describe 'ユーザー新規登録' do
-    
     it '必須項目が存在すれば登録できる' do
       expect(@user).to be_valid
     end
@@ -22,7 +21,5 @@ RSpec.describe User, type: :model do
       @user.valid?
       expect(@user.errors.full_messages).to include("Email can't be blank")
     end
-
   end
-
 end
