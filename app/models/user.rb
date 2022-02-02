@@ -21,4 +21,6 @@ class User < ApplicationRecord
   VALID_NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/.freeze
   validates :last_name_kana, format: { with: VALID_NAME_KANA_REGEX, message: 'は全角カタカナである必要があります' }
   validates :first_name_kana, format: { with: VALID_NAME_KANA_REGEX, message: 'は全角カタカナである必要があります' }
+
+  has_many :items
 end
