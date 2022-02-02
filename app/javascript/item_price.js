@@ -3,9 +3,9 @@ function calculation(){
 
   priceInput.addEventListener("input", () => {
     inputValue = priceInput.value
+    tax = inputValue*0.1
 
     const addTaxDom = document.getElementById("add-tax-price");
-    tax = inputValue*0.1
     addTaxDom.innerHTML = (Math.floor(tax))
 
     const profit = document.getElementById("profit");
