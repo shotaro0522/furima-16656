@@ -16,4 +16,6 @@ class Item < ApplicationRecord
 
   VALID_PRICE2_REGEX = /\A[0-9]+\z/.freeze
   validates :price, format: { with: VALID_PRICE2_REGEX, message: 'は半角数値である必要があります' }
+
+  has_one :order
 end
