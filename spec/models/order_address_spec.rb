@@ -1,9 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe OrderAddress, type: :model do
-
   describe '購入情報の保存' do
-
     before do
       user = FactoryBot.create(:user)
       item = FactoryBot.create(:item)
@@ -20,7 +18,6 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.house_name = ''
         expect(@order_address).to be_valid
       end
-
     end
 
     context '内容に問題がある場合' do
@@ -32,7 +29,7 @@ RSpec.describe OrderAddress, type: :model do
       it 'post_codeが「3桁ハイフン4桁」の半角文字列のみでないと保存できないこと' do
         @order_address.post_code = '1111111'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Post code is invalid. Include hyphen(-)")
+        expect(@order_address.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
       end
       it 'prefectureが空だと保存できないこと' do
         @order_address.prefecture_id = ''
