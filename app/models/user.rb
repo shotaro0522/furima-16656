@@ -23,4 +23,5 @@ class User < ApplicationRecord
   validates :first_name_kana, format: { with: VALID_NAME_KANA_REGEX, message: 'は全角カタカナである必要があります' }
 
   has_many :items
+  has_many :orders
 end
