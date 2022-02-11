@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   def edit
     if current_user.id != @item.user.id
       redirect_to root_path
-    elsif Order.exists?(params[:id])
+    elsif Order.exists?(item_id: @item.id)
       redirect_to root_path
     end
   end
