@@ -59,7 +59,7 @@ RSpec.describe OrderAddress, type: :model do
       it 'phone_numberが10桁以上11桁以内の半角数値でないと保存できないこと' do
         @order_address.phone_number = '080-1111-1111'
         @order_address.valid?
-        expect(@order_address.errors.full_messages).to include("Phone number is invalid. Don't include hyphen(-)")
+        expect(@order_address.errors.full_messages).to include('Phone number is invalid.')
       end
       it 'tokenが空だと保存できないこと' do
         @order_address.token = ''
